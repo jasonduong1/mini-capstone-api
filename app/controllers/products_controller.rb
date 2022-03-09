@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     render json: products.as_json
   end
 
-  def one_product
+  def first_product
     product = Product.first
     render json: product.as_json
   end
