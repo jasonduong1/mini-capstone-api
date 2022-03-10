@@ -8,4 +8,10 @@ class ProductsController < ApplicationController
     product = Product.first
     render json: product.as_json
   end
+
+  def which_product
+    input = params[:number]
+    product = Product.find(input)
+    render json: product.as_json
+  end
 end
