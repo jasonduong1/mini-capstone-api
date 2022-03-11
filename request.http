@@ -7,3 +7,10 @@ Content-Type: application/json
   "image_url": "apple.com",
   "description": "omg its the new green iphone"
 }
+### update request
+PATCH http://localhost:3000/products/8
+Content-Type: application/json
+
+{
+  "description": "the new green iphone"
+}
