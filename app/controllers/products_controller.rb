@@ -15,4 +15,14 @@ class ProductsController < ApplicationController
     product = Product.find(product_id)
     render json: product.as_json
   end
+
+  def create
+    product = Product.create(
+      name: params[:name],
+      price: params[:price],
+      image_url: params[:image_url],
+      description: params[:description],
+    )
+    render json: product.as_json
+  end
 end
