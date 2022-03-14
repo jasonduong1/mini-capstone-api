@@ -9,15 +9,15 @@ Content-Type: application/json
   "description": "omg its the new green iphone"
 }
 ### update request
-PATCH http://localhost:3000/products/8
+PATCH http://localhost:3000/products/5
 Content-Type: application/json
 
 {
-  "description": "the new green iphone"
+  "image_url": "https://audioengineusa.com/wp-content/uploads/2018/02/black1-1.jpg"
 }
 
 ### delete product
-DELETE http://localhost:3000/products/7
+DELETE http://localhost:3000/products/10
 
 ### index request
 GET http://localhost:3000/products
