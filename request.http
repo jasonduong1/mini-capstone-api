@@ -1,3 +1,4 @@
+### create request
 POST http://localhost:3000/products
 Content-Type: application/json
 
@@ -16,4 +17,8 @@ Content-Type: application/json
 }
 
 ### delete product
-DELETE http://localhost:3000/products/9
+DELETE http://localhost:3000/products/7
+
+### index request
+GET http://localhost:3000/products
+Content-Type: application/json
