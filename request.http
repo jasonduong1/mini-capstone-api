@@ -1,5 +1,5 @@
 ### create request
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
@@ -20,5 +20,8 @@ Content-Type: application/json
 DELETE http://localhost:3000/products/10
 
 ### index request
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 Content-Type: application/json
+
+### show request
+GET http://localhost:3000/products/1.json
