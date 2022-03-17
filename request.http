@@ -3,19 +3,18 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "phone",
-  "price": 1000,
+  "name": "ipad",
+  "price": -2,
   "image_url": "apple.com",
   "description": "omg its the new green iphone"
 }
 ### update request
-PATCH http://localhost:3000/products/5
+PATCH http://localhost:3000/products/5.json
 Content-Type: application/json
 
 {
-  "image_url": "https://audioengineusa.com/wp-content/uploads/2018/02/black1-1.jpg"
+  "name": ""
 }
-
 ### delete product
 DELETE http://localhost:3000/products/10
 

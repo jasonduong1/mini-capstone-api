@@ -19,27 +19,31 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.create(
+    @product = Product.new(
       name: params[:name],
       price: params[:price],
       image_url: params[:image_url],
       description: params[:description],
     )
     # render json: product.as_json
-    @product = product
-    render :show
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.objects.first.full_message }, status: 422
+    end
   end
 
   def update
-    product_id = params[:id]
-    product = Product.find(product_id)
-    product.name = params[:name] || product.name
-    product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
-    product.description = params[:description] || product.description
-    product.save
-    @product = product
-    render :show
+    @product = Product.find(params[:id])
+    @product.name = params[:name] || @product.name
+    @product.price = params[:price] || @product.price
+    @product.image_url = params[:image_url] || @product.image_url
+    @product.description = params[:description] || @product.description
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.objects.first.full_message }, status: 422
+    end
   end
 
   def destroy
