@@ -34,3 +34,14 @@ Content-Type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "jason@test.com",
+  "password": "password"
+}
+### index request w/ auth
+GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDc5NzE4OTJ9.FcDgjP9rn80C8ZdufqWQlqZUGVkVCxLRHAAms6W4H7I
