@@ -45,3 +45,17 @@ Content-Type: application/json
 ### index request w/ auth
 GET http://localhost:3000/products.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDc5NzE4OTJ9.FcDgjP9rn80C8ZdufqWQlqZUGVkVCxLRHAAms6W4H7I
+### create order
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+
+{
+  "user_id":1,
+  "product_id":2,
+  "quantity":3,
+  "subtotal":4,
+  "tax":5,
+  "total":6
+}
+### show order
+GET http://localhost:3000/orders/2.json
