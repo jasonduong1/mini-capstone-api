@@ -24,3 +24,13 @@ Content-Type: application/json
 
 ### show request
 GET http://localhost:3000/products/1.json
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "jason",
+  "email": "jason@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
