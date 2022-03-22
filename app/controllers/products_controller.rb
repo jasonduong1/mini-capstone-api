@@ -1,22 +1,15 @@
 class ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
-  #  def which_product
-  #   input = params[:number]
-  #   product = Product.find(input)
-  #   render json: product.as_json
-  # end
 
   def index
     pp current_user
     @products = Product.all
-    # render json: products.as_json(methods: [:is_discounted?, :tax, :total])
     render :index
   end
 
   def show
     product_id = params[:id]
     @product = Product.find(product_id)
-    # render json: product.as_json(methods: [:is_discounted?, :tax, :total])
     render :show
   end
 

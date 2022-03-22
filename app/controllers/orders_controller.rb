@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
-  before_action :authenicate_user
+  before_action :authenticate_user
 
   def create
     order = Order.new(
       user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: subtotal,
+      subtotal: params[:subtotal],
       tax: params[:tax],
       total: params[:total],
     )

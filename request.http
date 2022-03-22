@@ -1,3 +1,4 @@
+@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgwNjI0NzR9.bzJzvLLOXksMj1bHqaGhdMW9U8oLtV0S8oDcQzY08T4
 ### create request
 POST http://localhost:3000/products.json
 Content-Type: application/json
@@ -44,10 +45,10 @@ Content-Type: application/json
 }
 ### index request w/ auth
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDc5NzE4OTJ9.FcDgjP9rn80C8ZdufqWQlqZUGVkVCxLRHAAms6W4H7I
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgwNjE2NzR9.iO7ePAersn8MhTP_6GCpEuxj7ccbU_O-LMsTiBubv6I
 ### create order
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDc5NzE4OTJ9.FcDgjP9rn80C8ZdufqWQlqZUGVkVCxLRHAAms6W4H7I
+Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
 
 {
