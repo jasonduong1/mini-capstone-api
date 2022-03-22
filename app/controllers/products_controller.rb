@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
   #  def which_product
   #   input = params[:number]
   #   product = Product.find(input)
