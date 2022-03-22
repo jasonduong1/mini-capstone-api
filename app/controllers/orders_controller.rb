@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
       user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: params[:subtotal],
+      subtotal: subtotal,
       tax: params[:tax],
       total: params[:total],
     )
@@ -21,4 +21,5 @@ class OrdersController < ApplicationController
     orders = Order.all
     render json: orders.as_json
   end
+
 end
