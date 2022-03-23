@@ -57,6 +57,7 @@ Content-Type: application/json
 }
 ### show order
 GET http://localhost:3000/orders/2.json
+Authorization: Bearer {{admin_jwt}}
 ### order index
 GET http://localhost:3000/orders.json
 Authorization: Bearer {{admin_jwt}}
