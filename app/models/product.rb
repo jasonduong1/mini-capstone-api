@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
 
+  has_many :category_products
+
   belongs_to :supplier
   # def supplier
   #   Supplier.find_by(id: supplier_id)
