@@ -1,4 +1,4 @@
-@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgxODAxMDZ9.umpZj4DYNMtOPid0kavvODMFOrh172DaSPgc4mQ2VYo
+@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgzMjIwMzB9.HhDvlVG26kLdCPpaKqgW9nIQjbuZaaVxMWStgj6OVJU
 ### create request
 POST http://localhost:3000/products.json
 Content-Type: application/json
@@ -61,3 +61,13 @@ Authorization: Bearer {{admin_jwt}}
 ### order index
 GET http://localhost:3000/orders.json
 Authorization: Bearer {{admin_jwt}}
+
+### create order
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer {{admin_jwt}}
+Content-Type: application/json
+
+{
+  "product_id":5,
+  "quantity":1
+}
