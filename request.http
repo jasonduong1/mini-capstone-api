@@ -62,7 +62,7 @@ Authorization: Bearer {{admin_jwt}}
 GET http://localhost:3000/orders.json
 Authorization: Bearer {{admin_jwt}}
 
-### create order
+### create carted
 POST http://localhost:3000/carted_products.json
 Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
@@ -71,3 +71,6 @@ Content-Type: application/json
   "product_id":5,
   "quantity":1
 }
+### cart index
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{admin_jwt}}
