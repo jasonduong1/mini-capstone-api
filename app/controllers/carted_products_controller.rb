@@ -10,4 +10,9 @@ class CartedProductsController < ApplicationController
     carted_product.save
     render json: carted_product
   end
+
+  def index
+    carted_products = CartedProduct.all
+    render json: carted_products
+  end
 end
