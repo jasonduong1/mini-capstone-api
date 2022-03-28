@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   def create
     product = Product.find(params[:product_id])
 
-    calculated_subtotal = product.price * params[:quantity]
+    calculated_subtotal = 0
+    carted_products.each do |carted_product|
+      calculated_subtotal += carted_product.quantity * carted_product.product.price
+    end
+
     calculated_tax = calculated_subtotal * 0.09
     calculated_total = calculated_subtotal + calculated_tax
 
