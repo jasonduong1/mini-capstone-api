@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
 
   def create
-    product = Product.find(params[:product_id])
+    carted_products = current_user.carted_products.where(status: "carted")
 
     calculated_subtotal = 0
     carted_products.each do |carted_product|
