@@ -1,4 +1,5 @@
-@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgzMjIwMzB9.HhDvlVG26kLdCPpaKqgW9nIQjbuZaaVxMWStgj6OVJU
+@admin_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDg1NzIzMjh9.3oJ4_HeNnhh_xPaU2roKQcAqwF1N4D0kHZ63T9sXJOY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDg1NzE4MjB9.pPzAYqWJINZIt4GfOFBZZ059uCKBH5XdMKLqW3PZ31Y
 ### create request
 POST http://localhost:3000/products.json
 Content-Type: application/json
@@ -35,12 +36,20 @@ Content-Type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
-### Sessions create (login)
+### Sessions create (admin login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
   "email": "jason@test.com",
+  "password": "password"
+}
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
   "password": "password"
 }
 ### index request w/ auth
@@ -64,7 +73,7 @@ Authorization: Bearer {{admin_jwt}}
 
 ### create carted
 POST http://localhost:3000/carted_products.json
-Authorization: Bearer {{admin_jwt}}
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -74,3 +83,6 @@ Content-Type: application/json
 ### cart index
 GET http://localhost:3000/carted_products.json
 Authorization: Bearer {{admin_jwt}}
+### cart index
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
