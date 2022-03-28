@@ -61,8 +61,8 @@ Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
 
 {
-  "product_id":5,
-  "quantity":1
+  "product_id":2,
+  "quantity":2
 }
 ### show order
 GET http://localhost:3000/orders/2.json
@@ -77,8 +77,8 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "product_id":5,
-  "quantity":1
+  "product_id":2,
+  "quantity":2
 }
 ### cart index
 GET http://localhost:3000/carted_products.json
