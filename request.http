@@ -60,20 +60,13 @@ POST http://localhost:3000/orders.json
 Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
 
-{
-  "product_id":2,
-  "quantity":2
-}
-### show order
-GET http://localhost:3000/orders/2.json
-Authorization: Bearer {{admin_jwt}}
 ### order index
 GET http://localhost:3000/orders.json
 Authorization: Bearer {{admin_jwt}}
 
 ### create carted
 POST http://localhost:3000/carted_products.json
-Authorization: Bearer {{jwt}}
+Authorization: Bearer {{admin_jwt}}
 Content-Type: application/json
 
 {
