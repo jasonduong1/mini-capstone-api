@@ -22,14 +22,4 @@ class OrdersController < ApplicationController
     carted_products.update_all(status: "purchased", order_id: @order.id)
     render :show
   end
-
-  def show
-    @order = Order.find(params[:id])
-    render :show
-  end
-
-  def index
-    @orders = Order.all
-    render :index
-  end
 end
