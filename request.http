@@ -79,6 +79,3 @@ Authorization: Bearer {{admin_jwt}}
 ### cart index
 GET http://localhost:3000/carted_products.json
 Authorization: Bearer {{jwt}}
-### delete product
-DELETE http://localhost:3000/carted_products/5.json
-Authorization: Bearer {{admin_jwt}}
