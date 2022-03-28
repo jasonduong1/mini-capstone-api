@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   has_many :categories, through: :category_products
 
   has_many :carted_products
+  has_many :orders, through: :carted_products
+
   belongs_to :supplier
   # def supplier
   #   Supplier.find_by(id: supplier_id)
@@ -16,8 +18,6 @@ class Product < ApplicationRecord
   # def images
   #   Image.where(product_id: id)
   # end
-
-  has_many :orders
 
   def is_discounted?
     price < 10 ? :yes : :no
