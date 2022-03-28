@@ -1,4 +1,6 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user
+
   def create
     carted_product = CartedProduct.new(
       user_id: current_user.id,
@@ -12,7 +14,7 @@ class CartedProductsController < ApplicationController
   end
 
   def index
-    carted_products = CartedProduct.all
+    carted_products = current_user.carted_products
     render json: carted_products
   end
 end
